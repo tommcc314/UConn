@@ -1,0 +1,3 @@
+## Singleton Pattern
+
+A singleton ensures only one instance of a class can be created. This is useful when you want to set properties and methods which are constant across an environment. In this example, we have a UnivConfig class which sets certain properties of students at UConn Stamford. Every student should reference the same config object so that if at any point the config would change, such as a new professor, then this change would automatically be reflected for every student.

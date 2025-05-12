@@ -1,0 +1,36 @@
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_v1_5
+
+def decryptkey(filename):
+    d = b"""-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAyNgDLRKByFlcanPPv0pyhQBB2hcnJ7/M3gFj5rwMTWbecS7Y
+27etI6iLf7R5rd6oe8pcYPG5Ol86eGfd3dfpfIv6FjW7Zbrl3MArULLpCzT76Mg/
+f4LuVp1LDs2dH3HQE1vj96mXpQ7YwhVVu5x9esIh2KgV+w2U9xH8+11zosVARGz1
+Bx1QL+yX0gpHhNCukq63OZGQ3SR4v4zbFS75MqBPond4y2FLq/ElsPfiGjfNNtaA
+TrCo9UXtWSACXmWp0i48wGiqIrJrVMy62HvuxKZ+vAErtdTKu65BWW9QgbpfB5kS
+7Mm54YKRJe3jcSRRIrK0lusxseDH8lEb1bR28QIDAQABAoIBAFm8VfLx9WWwM3/m
+nbgwyakOG94XASob4quAgIPLmk2M/C8iyMamsuefOzDEUKd0N+ATYqH37pQbjzLT
+6Yfgm9RHcGYy/LcvwdsXS2MjhMc6laEEs4ZD2Dx/y9Th3mV5wwebQ2hY8EXRs9xH
+jwYjndbW3SuBskx43Ylkkp02vF9JKbY5QxIA9hoxBLNl1ZtnBOSH/1byMeYYas1m
+Am5XlOp3iHxCxUdFDHSdVUPFSBV0CR6HRU5TnTZ0BoitAqSDy6JuBIWsnpApio5k
+SxhXIX0rsD5IWj0yqgTobYqva/GSzodEDgsSktRKIRC5u5xWP3Oy4NKKkY4ABn0f
+JjWfhm8CgYEAzB2VXNcWOI7nEB+kvAXpUR59oZCv6mAiPS42kNo1xAPhZZBzuJ1b
+feXTCtfx+hD2ngQcdKKqASww1NZFZp5SaCYbbi52IpVk5XsOpht3HNeOOixSk2ey
+J5J4ZF/n6jh4AItznYXXkrBVZWMdj2nUsay7/eTAVlilolYS2aRvVQMCgYEA++WG
+iKUlGcu8y8J6hMZdnLYeABikyyp2KF7NKXAOBrpMKqH/DRfwqFYNBcx6E5p7uZlo
+FqFP/20iFCxJmU1XNUFqUU6dM+zlE3YcnJ71mbZR8b3gseYq7qq3gC2xUvt23kSX
+CFgkuenkncoJexhEzj070x6Hr6tYqrQwNMQAX/sCgYAtnkL+f9eohk+f6+KOXyfZ
+CF59mG+oixm74LMzRoGTsGZUo6cpUIndJls3ZjHfeKEViceuTZh/MJgtSUIzgBjc
+y/9/bYTbj9X/77PDbgn9+TMBT1yZMyi+7V5Y2JJlZ39yZ7hMMViPoTdEtJUrszRl
+DTzqrpBJ+//wuxn1aGm1bwKBgQDJnG3PVI6bVOwpEeFKABLQ6Rqd7RuI2NV1flsq
+/Vrcm6N2w+4FptGhii4mJADZS94XMOeUpUwIHmsWRlQp9TMFlvPnW8qK0uKObwx7
+ducQPlLb76O1/4kBOXZhizDQQCBlyfQwY4wRmVi3ygtIkKYRhAUr9tWXDseK6Wlj
+8jRynQKBgHS71jngHZ/7Z6MLD03a4Y6/KcgGnvFGuafqS2zcLv2pos/nm6pLbO5q
+jnznYB+yj0eyevqH85C2G5phS02eK2WfcFPEGwEKi3yPSSiWjV7B6DCDOCFWvb4d
+7nc34HqF9cuitIAdJGi9bueObE+ykDiGSKAXtPdTuCBsHFS7ldpV
+-----END RSA PRIVATE KEY-----"""
+    with open(filename, "rb") as file:
+        cipher = PKCS1_v1_5.new(RSA.importKey(d))
+        print(cipher.decrypt(file.read(), bytes))
+if __name__ == "__main__":
+    decryptkey("EncryptedSharedKey")

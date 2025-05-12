@@ -1,0 +1,5 @@
+## Adapter Pattern
+
+An adapter is a bridge between interfaces which would otherwise not be used together. In this example, we have two interfaces: DataAnalyzer and DataRetriever. The DataRetriever is responsible for getting data from a source, such as an API and the DataAnalyzer performs operations on that data. The issue is that the DataRetriever gets strings with data separated by commas, which cannot be used by the Data Analyzer which expects data to be a list of doubles.
+
+The PriceHistoryDataAnalyzer class is the adapter between NumericalDataAnalyzer and PriceHistoryDataRetriever. The adapter contains an instance of the PriceHistoryDataRetriever class, which gets the string of prices. To implement the DataAnalyzer mean function, it converts the string into a list of doubles to then pass into the NumericalDataAnalyzer, producing the desired result.

